@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Proposal in Writing</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a romantic touch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles and animations */
+        @keyframes heartPulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 1;
+            }
+        }
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .heart-pulse {
+            animation: heartPulse 1.5s infinite;
+        }
+        .fade-in-scale {
+            animation: fadeInScale 1s ease-out forwards;
+        }
+        .proposing-text {
+            font-family: 'Dancing Script', cursive;
+        }
+        .gradient-bg {
+            background: linear-gradient(-45deg, #f4c2c2, #f5d4d4, #c9a4e3, #b49fdf);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        .heart {
+            position: absolute;
+            color: #ff69b4;
+            font-size: 2rem;
+            animation: confettiFall 10s linear infinite;
+        }
+        .heart:nth-child(2n) { animation-delay: 1s; }
+        .heart:nth-child(3n) { animation-delay: 2s; }
+        .heart:nth-child(4n) { animation-delay: 3s; }
+        .heart:nth-child(5n) { animation-delay: 4s; }
+    </style>
+</head>
+<body class="font-inter gradient-bg min-h-screen text-gray-800 flex items-center justify-center p-4 relative overflow-hidden">
+    <!-- Animated hearts in the background -->
+    <div class="absolute inset-0 z-0 opacity-75">
+        <span class="heart top-10 left-10">❤️</span>
+        <span class="heart top-1/4 left-1/2">💖</span>
+        <span class="heart top-2/3 right-1/4">💕</span>
+        <span class="heart top-1/2 left-1/4">❤️</span>
+        <span class="heart bottom-10 right-10">💖</span>
+    </div>
+
+    <!-- Login Container -->
+    <div id="loginPage" class="relative z-10 max-w-sm w-full bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-3xl shadow-xl p-8 md:p-12 text-center border border-pink-200">
+        <div class="proposing-text text-5xl font-bold text-pink-600 mb-4">
+            Welcome, My Love
+        </div>
+        <p class="text-gray-600 mb-6">Enter our special world with a secret word.</p>
+        <div class="mb-6">
+            <img src="https://placehold.co/400x200/FFC0CB/FFFFFF?text=Cute+Couple" alt="Cute couple holding hands" class="rounded-xl shadow-md mx-auto">
+        </div>
+        <input type="text" id="passcode" placeholder="Enter the special word" class="w-full p-3 rounded-lg border-2 border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-colors duration-200 text-center text-lg">
+        <p id="errorMessage" class="text-red-500 mt-2 hidden">That's not it, my love. Try again!</p>
+        <button id="loginBtn" class="w-full mt-6 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all transform hover:scale-105 active:scale-95 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-pink-300">
+            Enter
+        </button>
+    </div>
+    
+    <!-- Main content container (initially hidden) -->
+    <div id="proposalPage" class="relative z-10 max-w-5xl w-full bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-3xl shadow-xl p-8 md:p-12 text-center border border-pink-200 hidden">
+        <div class="proposing-text text-6xl md:text-7xl font-bold text-pink-600 mb-6 heart-pulse">
+            To My Dearest Love
+        </div>
+        
+        <!-- Flex container for text and images -->
+        <div class="md:flex md:space-x-8 items-start">
+            <!-- Essay content -->
+            <div id="essayContent" class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8 md:mb-0 space-y-6 text-left md:w-2/3">
+                <p>Phele baat hasna mana hiii dekho baa</p>
+                <p>My love, I've spent countless hours imagining this moment, trying to find the perfect words to capture the depth of what I feel for you. You came into my life like a sunrise after a long night, bringing warmth, color, and a kind of joy I never knew existed. You've been my constant, my confidant, and the most incredible adventure I've ever embarked on. With you, every day feels like a beautiful new chapter, and I know that my life is richer and more complete simply because you are in it.</p>
+                <p>From the silly inside jokes to the quiet moments of peace, every memory we've made together is a treasure. You see me for who I truly am and love me unconditionally, flaws and all. You've taught me what it means to be truly happy, and you've shown me that real love isn't just a feeling—it's a choice we make every single day. I choose you, my love, today and for all of our tomorrows. I want to build a life with you, filled with laughter, challenges we overcome together, and a love that only grows stronger with time.</p>
+                <p>I don't need a grand gesture or a fairy tale; all I need is you. So, with all the love in my heart and all the hope in the world, I want to be the one to ask...</p>
+            </div>
+            
+            <!-- Images container -->
+            <div class="flex-shrink-0 mt-8 md:mt-0 md:w-1/3 space-y-4">
+                <img src="https://images.unsplash.com/photo-1514446750685-c27ac87a4403?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bG92ZSUyMGFlc3RoZXRpY3xlbnwwfHwwfHx8MA%3D%3D" alt="A romantic moment between a couple" class="rounded-xl shadow-md w-full h-auto">
+                <img src="https://www.shutterstock.com/shutterstock/photos/1903964974/display_1500/stock-vector-love-you-forever-text-with-hearts-on-pastel-pink-background-1903964974.jpg" alt="Another sweet picture of a couple" class="rounded-xl shadow-md w-full h-auto">
+            </div>
+        </div>
+
+        <!-- The proposal button -->
+        <button id="revealBtn" class="mt-8 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all transform hover:scale-105 active:scale-95 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-pink-300">
+            Reveal the Question
+        </button>
+
+        <!-- The hidden proposal text -->
+        <div id="proposal" class="mt-8 fade-in-scale hidden">
+            <p class="proposing-text text-5xl md:text-6xl text-purple-600 font-bold leading-tight">
+                Will you marry me?
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const loginBtn = document.getElementById('loginBtn');
+        const passcodeInput = document.getElementById('passcode');
+        const errorMessage = document.getElementById('errorMessage');
+        const loginPage = document.getElementById('loginPage');
+        const proposalPage = document.getElementById('proposalPage');
+
+        const revealBtn = document.getElementById('revealBtn');
+        const proposal = document.getElementById('proposal');
+        
+        const correctPasscode = "love"; // The secret word to unlock the page
+
+        loginBtn.addEventListener('click', () => {
+            if (passcodeInput.value.toLowerCase() === correctPasscode) {
+                loginPage.classList.add('hidden');
+                proposalPage.classList.remove('hidden');
+            } else {
+                errorMessage.classList.remove('hidden');
+            }
+        });
+
+        revealBtn.addEventListener('click', () => {
+            // Hide the button
+            revealBtn.style.display = 'none';
+
+            // Show the final proposal text
+            proposal.classList.remove('hidden');
+
+            // Optional: Scroll to the bottom to make sure the proposal is visible
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
